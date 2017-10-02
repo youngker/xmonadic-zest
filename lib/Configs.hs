@@ -59,8 +59,8 @@ myManagementHooks = composeAll . concat $
         doFloat              | t <- myOtherFloats]
     , [ fmap ( c `L.isInfixOf`) className -->
                doShift (head myWorkspaces) | c <- myBrowsers]
-    , [ className   =? c                  -->
-               doShift (myWorkspaces !! 1) | c <- ["Emacs"]]
+    --, [ className   =? c                  -->
+    --           doShift (myWorkspaces !! 1) | c <- ["Emacs"]]
     , [ className   =? c                  -->
                doShift (myWorkspaces !! 3) | c <- myMusic]
     , [ fmap ( c `L.isInfixOf`) className -->
@@ -74,9 +74,9 @@ myManagementHooks = composeAll . concat $
         myMusic       = ["Rhythmbox", "Banshee", "Spotify"]
 
 -- These layouts are stored in the Custom.Layouts module
-myLayoutHook = im normal where
-    normal   = myLayout
-    im       = onWorkspace "im" imLayout
+-- myLayoutHook = myLayout --im normal where
+--    normal   = myLayout
+--    im       = onWorkspace "im" imLayout
 
 manageScratchPad :: ManageHook
 manageScratchPad = scratchpadManageHook (W.RationalRect l t w h)
@@ -88,7 +88,7 @@ manageScratchPad = scratchpadManageHook (W.RationalRect l t w h)
 
 -- color definitions
 myNormalBorderColor  = "#000000"
-myFocusedBorderColor = "#000000"
+myFocusedBorderColor = "#FF0000"
 
 -- colors for shellprompt
 colorNormalFG = "#B6B4B8"

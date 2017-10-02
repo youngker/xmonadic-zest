@@ -9,7 +9,7 @@ import XMonad.Util.EZConfig
 
 import XMonad.Hooks.Place
 import XMonad.Hooks.EwmhDesktops        (ewmh)
-import System.Taffybar.Hooks.PagerHints (pagerHints)
+-- import System.Taffybar.Hooks.PagerHints (pagerHints)
 import System.Posix.Unistd
 import XMonad.Util.Run(spawnPipe, safeSpawn)
 import XMonad.Hooks.DynamicLog
@@ -23,11 +23,11 @@ import Startup
 import Layouts
 import MyVars
 
-myConfig = ewmh $ pagerHints $ defaultConfig {
+myConfig = ewmh $ def {
     manageHook = composeAll [
         placeHook myPlacement
         , manageDocks
-        , manageHook defaultConfig
+        , manageHook def
         , myManagementHooks
         , manageScratchPad
         , composeAll myFullscreenHooks ]
@@ -45,6 +45,6 @@ myConfig = ewmh $ pagerHints $ defaultConfig {
 -- Key binding to toggle the gap for the bar.
 toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 
-emptyPP = defaultPP { ppOutput = \x-> return () }
+emptyPP = def { ppOutput = \x-> return () }
 
 main = xmonad =<< statusBar "taffybar" emptyPP toggleStrutsKey myConfig

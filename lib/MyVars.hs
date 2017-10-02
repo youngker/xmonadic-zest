@@ -5,7 +5,7 @@ import XMonad
 data Action = Increase | Decrease
 
 myModMask :: KeyMask
-myModMask = mod4Mask
+myModMask = mod3Mask
 
 myAppLauncherApp :: String
 myAppLauncherApp = "rofi -show run -lines 6 -eh 1 -width 100 -padding 100 -opacity \"85\" -bw 0 -color-normal \"#2f343f,#f9f9f9,#2f343f,#2f343f,#9575cd\" -color-window \"#2f343f,#2f343f,#2f343f\""

@@ -5,7 +5,7 @@ module Layouts where
 import           XMonad
 import qualified XMonad.StackSet as S
 import           XMonad.Layout.Spacing
-import qualified XMonad.Layout.Tabbed as Tab
+import           XMonad.Layout.Tabbed
 import           XMonad.Hooks.ManageDocks
 import           XMonad.Layout.Grid
 import           XMonad.Layout.LayoutModifier
@@ -15,7 +15,14 @@ import           XMonad.Util.WindowProperties
 import           Control.Monad
 import           Data.Ratio
 
-myLayout = stiled ||| Tab.simpleTabbed ||| Mirror stiled
+myTabConfig = def { fontName = "xft:Monaco:size=8"
+                  , inactiveColor = "#1A1829"
+                  , inactiveBorderColor = "#1A1829"
+                  , activeColor = "#84305e"
+                  , activeBorderColor = "#84305e"
+                  , decoHeight = 15 }
+
+myLayout = stiled ||| tabbed shrinkText myTabConfig ||| Mirror stiled
  where
   -- default tiling algorithm partitions the screen into two panes
   {-tiled = ResizableTall nmaster1 delta ratio _slaves-}
@@ -26,7 +33,6 @@ myLayout = stiled ||| Tab.simpleTabbed ||| Mirror stiled
   ratio = 1/2   -- Default proportion of screen occupied by master pane
   delta = 5/100 -- Percent of screen to increment by when resizing panes
   _slaves = []
-
 
 -- | The following has been taken (and slightly modified) from an online source.
 --   It is certainly not the nice solution I was looking for.

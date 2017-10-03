@@ -87,8 +87,8 @@ manageScratchPad = scratchpadManageHook (W.RationalRect l t w h)
     l = 1 - w   -- distance from left edge, 0%
 
 -- color definitions
-myNormalBorderColor  = "#000000"
-myFocusedBorderColor = "#FF0000"
+myNormalBorderColor  = "#282A36"
+myFocusedBorderColor = "#BD93F9"
 
 -- colors for shellprompt
 colorNormalFG = "#B6B4B8"

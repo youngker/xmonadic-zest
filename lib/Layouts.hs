@@ -15,19 +15,19 @@ import           XMonad.Util.WindowProperties
 import           Control.Monad
 import           Data.Ratio
 
-myTabConfig = def { fontName = "xft:Monaco:size=8"
+myTabConfig = def { fontName = "xft:Fira Mono:size=8"
                   , inactiveColor = "#1A1829"
                   , inactiveBorderColor = "#1A1829"
                   , activeColor = "#84305e"
                   , activeBorderColor = "#84305e"
-                  , decoHeight = 15 }
+                  , decoHeight = 30 }
 
 myLayout = stiled ||| tabbed shrinkText myTabConfig ||| Mirror stiled
  where
   -- default tiling algorithm partitions the screen into two panes
   {-tiled = ResizableTall nmaster1 delta ratio _slaves-}
 
-  stiled = spacingWithEdge 3 $ ResizableTall nmaster1 delta ratio _slaves
+  stiled = spacingWithEdge 4 $ ResizableTall nmaster1 delta ratio _slaves
 
   nmaster1 = 1  -- The default number of windows in the master pane
   ratio = 1/2   -- Default proportion of screen occupied by master pane

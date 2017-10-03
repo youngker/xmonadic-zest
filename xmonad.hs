@@ -39,6 +39,7 @@ myConfig = ewmh $ def {
   , focusedBorderColor = myFocusedBorderColor
   , modMask = myModMask
   , terminal = myTerminalApp
+  , focusFollowsMouse = False
   } `additionalKeysP` myAdditionalKeys
     `additionalKeys`  myComplexKeys
 

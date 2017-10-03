@@ -29,13 +29,13 @@ myStartup = do
   ewmhDesktopsStartup
   setDefaultCursor xC_left_ptr
   -- delayedStartOnce True 00 "taffybar"
-  delayedStartOnce True 09 "compton"
+  delayedStartOnce True 00 "compton"
   -- delayedStartOnce True 10 "pasystray"
   -- delayedStartOnce True 15 "thunderbird"
   -- delayedStartOnce False 30 "xscreensaver -no-splash"
   -- delayedStartOnce False 05 "emacs --daemon"
-  delayedStartOnce True 02 "xmodmap ~/.Xmodmap"
-  delayedStartOnce True 10 "xcape -e 'Hyper_L=Tab'"
+  delayedStartOnce True 01 "xmodmap ~/.Xmodmap"
+  delayedStartOnce True 02 "xcape -e 'Hyper_L=Tab'"
   -- delayedStartOnce True 02 "urxvtd --quiet --opendisplay --fork"
   delayedStartOnce True 02 "konsole"
   -- delayedStartOnce False 30 "watch -n 120 ~/.myscripts/batteryNotifier.sh"

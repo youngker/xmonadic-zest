@@ -47,4 +47,4 @@ toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 
 emptyPP = def { ppOutput = \x-> return () }
 
-main = xmonad =<< statusBar "taffybar" emptyPP toggleStrutsKey myConfig
+main = xmonad =<< statusBar "xmobar" emptyPP toggleStrutsKey myConfig

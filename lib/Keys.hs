@@ -58,7 +58,7 @@ myAdditionalKeys =
   , ("<XF86MonBrightnessUp>", spawn $ brightnessAction Increase)
 
   --
-  , ("M4-q" , spawn "xmonad --recompile; xmonad --restart")
+  , ("M-q" , spawn "xmonad --recompile; xmonad --restart")
   ]
 
 -- | Keys which don't exist in the simple default string mappings above

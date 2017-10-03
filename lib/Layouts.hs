@@ -27,7 +27,7 @@ myLayout = stiled ||| tabbed shrinkText myTabConfig ||| Mirror stiled
   -- default tiling algorithm partitions the screen into two panes
   {-tiled = ResizableTall nmaster1 delta ratio _slaves-}
 
-  stiled = spacing 5 $ ResizableTall nmaster1 delta ratio _slaves
+  stiled = spacingWithEdge 3 $ ResizableTall nmaster1 delta ratio _slaves
 
   nmaster1 = 1  -- The default number of windows in the master pane
   ratio = 1/2   -- Default proportion of screen occupied by master pane

@@ -14,7 +14,7 @@ myBrowserApp :: String
 myBrowserApp = "google-chrome-beta"
 
 myTerminalApp :: String
-myTerminalApp = "urxvtc"
+myTerminalApp = "konsole"
 
 myEditorApp :: String
 myEditorApp = "emc"

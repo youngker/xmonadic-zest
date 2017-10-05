@@ -46,6 +46,9 @@ myConfig = ewmh $ def {
 -- Key binding to toggle the gap for the bar.
 toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 
-emptyPP = def { ppOutput = \x-> return () }
+emptyPP = def {
+  ppOutput   = \x-> return ()
+  , ppLayout = const ""
+  }
 
 main = xmonad =<< statusBar "xmobar" emptyPP toggleStrutsKey myConfig

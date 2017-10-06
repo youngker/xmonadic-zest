@@ -14,7 +14,7 @@ myBrowserApp :: String
 myBrowserApp = "google-chrome-beta"
 
 myTerminalApp :: String
-myTerminalApp = "konsole"
+myTerminalApp = "konsole -stylesheet ~/.style.css"
 
 myEditorApp :: String
 myEditorApp = "emc"

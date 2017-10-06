@@ -6,6 +6,8 @@ import           XMonad.Util.Cursor
 import           XMonad.Util.SpawnOnce
 import qualified XMonad.StackSet as W
 
+import MyVars
+
 -- | Sleeps for provided time, then
 --   Kills running instances of program (if greedyKill)
 --   Then starts the program if greedyKill was enabled, or
@@ -36,7 +38,7 @@ myStartup = do
   -- delayedStartOnce False 30 "xscreensaver -no-splash"
   -- delayedStartOnce False 05 "emacs --daemon"
   -- delayedStartOnce True 02 "urxvtd --quiet --opendisplay --fork"
-  delayedStartOnce True 02 "konsole"
+  delayedStartOnce True 02 myTerminalApp
   -- delayedStartOnce False 30 "watch -n 120 ~/.myscripts/batteryNotifier.sh"
   -- spawnOnce "~/.myscripts/blueoff &"
   spawn "feh --bg-fill /usr/share/backgrounds/wallpaper1.jpg &"

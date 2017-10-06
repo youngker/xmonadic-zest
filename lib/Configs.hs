@@ -1,6 +1,7 @@
 module Configs where
 
 import           XMonad
+import           XMonad.Layout.Tabbed
 import           XMonad.Layout.PerWorkspace
 import           XMonad.Hooks.Place
 import           XMonad.Hooks.ManageHelpers
@@ -14,7 +15,7 @@ import           System.Exit
 import qualified Data.Map as M
 import qualified Data.List as L
 
-import           Layouts
+-- import           Layouts
 import           MyVars()
 
 -- special command prompt
@@ -88,14 +89,37 @@ manageScratchPad = scratchpadManageHook (W.RationalRect l t w h)
 
 -- color definitions
 myNormalBorderColor  = "#282A36"
-myFocusedBorderColor = "#BD93F9"
+myFocusedBorderColor = "#282A36"
 
 -- colors for shellprompt
-colorNormalFG = "#B6B4B8"
-colorNormalBG = "#2F2E2B"
-colorNormalBO = "#1C2636"
-colorFocusFG = "#FFFFFF"
-colorFocusBG = "#2F2E2B"
-colorFocusBO = "#FF0000"
-colorOtherFG = "#707070"
-colorOtherBG = "#2F2E2B"
+colorNormalFG      = "#B6B4B8"
+colorNormalBG      = "#2F2E2B"
+colorNormalBO      = "#1C2636"
+colorFocusFG       = "#FFFFFF"
+colorFocusBG       = "#2F2E2B"
+colorFocusBO       = "#FF0000"
+colorOtherFG       = "#707070"
+colorOtherBG       = "#2F2E2B"
+colorInActiveBG    = "#282936"
+colorInActiveTabBG = "#1A1829"
+colorActiveBG      = "#84305E"
+
+myTabConfig = def
+  { fontName            = "xft:Dejavu Sans Mono:size=8",
+    inactiveColor       = colorInActiveTabBG,
+    inactiveBorderColor = colorInActiveTabBG,
+    activeColor         = colorActiveBG,
+    activeBorderColor   = colorActiveBG,
+    decoHeight          = 20
+  }
+
+myTitleBarConfig = def
+  { fontName            = "xft:Dejavu Sans Mono:size=8",
+    inactiveBorderColor = colorInActiveBG,
+    inactiveColor       = colorInActiveBG,
+    inactiveTextColor   = colorInActiveBG,
+    activeBorderColor   = colorActiveBG,
+    activeColor         = colorActiveBG,
+    activeTextColor     = colorActiveBG,
+    decoHeight          = 10
+  }

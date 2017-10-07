@@ -24,26 +24,24 @@ myAdditionalKeys :: [([Char], X())]
 myAdditionalKeys =
   [ ("M-C-j", windows W.swapUp)
   , ("M-C-k", windows W.swapDown)
-  , ("M1-<Space>", gotoMenu)
-  , ("M1-S-<Space>", bringMenu)
-  , ("M1-<Up>", prevWS)
-  , ("M1-<Down>", nextWS)
-  , ("M-S-q", kill)
+  , ("M-p", prevWS)
+  , ("M-n", nextWS)
+  , ("M-c", kill)
   , ("M-<Space>", sendMessage NextLayout)
   , ("M-j", windows W.focusDown)
   , ("M-k", windows W.focusUp)
   , ("M-i", sendMessage MirrorShrink)
   , ("M-u", sendMessage MirrorExpand)
-  , ("M-S-<Return>", windows W.swapMaster)
+  , ("M-m", windows W.swapMaster)
   , ("M-z", toggleWS' ["NSP"])
   , ("M-t", withFocused $ windows . W.sink)
 
   -- Launchers
   , ("M-d", spawn myAppLauncherApp)
-  , ("M-<Return>", spawn myTerminalApp)
+  , ("M-o", spawn myTerminalApp)
+  , ("M-C-<Return>", spawn myEditorApp)
   , ("M-s", scratchpadSpawnActionTerminal myTerminalApp)
-  , ("M-x f", spawn myBrowserApp)
-  , ("M1-<Return>", spawn myEditorApp)
+  , ("M-C-b", spawn myBrowserApp)
   -- , ("M-p", AL.launchApp def "zathura")
   -- , ("M-S-l", spawn "xscreensaver-command -lock")
 
@@ -57,8 +55,9 @@ myAdditionalKeys =
   , ("<XF86MonBrightnessDown>", spawn $ brightnessAction Decrease)
   , ("<XF86MonBrightnessUp>", spawn $ brightnessAction Increase)
 
-  --
-  , ("M-q" , spawn "xmonad --recompile; xmonad --restart")
+  -- System
+  , ("M-q"   , spawn "xmonad --restart")
+  , ("M-C-q" , spawn "xmonad --recompile; xmonad --restart")
   ]
 
 -- | Keys which don't exist in the simple default string mappings above

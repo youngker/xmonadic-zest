@@ -8,16 +8,16 @@ myModMask :: KeyMask
 myModMask = mod3Mask
 
 myAppLauncherApp :: String
-myAppLauncherApp = "rofi -show run -lines 6 -eh 1 -width 100 -padding 100 -opacity \"85\" -bw 0 -color-normal \"#2f343f,#f9f9f9,#2f343f,#2f343f,#9575cd\" -color-window \"#2f343f,#2f343f,#2f343f\""
+myAppLauncherApp = "rofi -show run"
 
 myBrowserApp :: String
-myBrowserApp = "google-chrome-beta"
+myBrowserApp = "google-chrome --no-sandbox"
 
 myTerminalApp :: String
 myTerminalApp = "konsole -stylesheet ~/.style.css"
 
 myEditorApp :: String
-myEditorApp = "emc"
+myEditorApp = "emacs"
 
 myMailClient :: String
 myMailClient = "thunderbird-bin"

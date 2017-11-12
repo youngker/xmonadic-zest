@@ -88,8 +88,8 @@ manageScratchPad = scratchpadManageHook (W.RationalRect l t w h)
     l = 1 - w   -- distance from left edge, 0%
 
 -- color definitions
-myNormalBorderColor  = "#282A36"
-myFocusedBorderColor = "#282A36"
+myNormalBorderColor  = "#2e3440"
+myFocusedBorderColor = "#2e3440"
 
 -- colors for shellprompt
 colorNormalFG      = "#B6B4B8"
@@ -100,9 +100,9 @@ colorFocusBG       = "#2F2E2B"
 colorFocusBO       = "#FF0000"
 colorOtherFG       = "#707070"
 colorOtherBG       = "#2F2E2B"
-colorInActiveBG    = "#282936"
-colorInActiveTabBG = "#1A1829"
-colorActiveBG      = "#84305E"
+colorInActiveBG    = "#2e3440"
+colorInActiveTabBG = "#2e3440"
+colorActiveBG      = "#5e81ac"
 
 myTabConfig = def
   { fontName            = "xft:Dejavu Sans Mono:size=8",

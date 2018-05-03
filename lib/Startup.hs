@@ -32,16 +32,16 @@ myStartup = do
   setDefaultCursor xC_left_ptr
   -- delayedStartOnce True 00 "taffybar"
   delayedStartOnce True 00 "compton"
-  delayedStartOnce True 01 "init-keyboard"
+  delayedStartOnce True 01 "~/bin/init-keyboard"
   -- delayedStartOnce True 10 "pasystray"
   -- delayedStartOnce True 15 "thunderbird"
   -- delayedStartOnce False 30 "xscreensaver -no-splash"
-  -- delayedStartOnce False 05 "emacs --daemon"
-  -- delayedStartOnce True 02 "urxvtd --quiet --opendisplay --fork"
-  delayedStartOnce True 02 myTerminalApp
+  delayedStartOnce True 02 "urxvtd --quiet --opendisplay --fork"
+  delayedStartOnce True 03 myTerminalApp
+  delayedStartOnce True 05 "emacs --daemon"
   -- delayedStartOnce False 30 "watch -n 120 ~/.myscripts/batteryNotifier.sh"
   -- spawnOnce "~/.myscripts/blueoff &"
-  spawn "feh --bg-fill /usr/share/backgrounds/wallpaper1.jpg &"
+  spawn "feh --bg-fill /usr/share/backgrounds/wallpaper.jpg &"
   spawn "xrdb ~/.Xresources &"
   -- spawn "pcmanfm --desktop &"
 

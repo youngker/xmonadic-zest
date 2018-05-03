@@ -14,7 +14,7 @@ myBrowserApp :: String
 myBrowserApp = "google-chrome --no-sandbox"
 
 myTerminalApp :: String
-myTerminalApp = "konsole -stylesheet ~/.style.css"
+myTerminalApp = "rxvt-unicode"
 
 myEditorApp :: String
 myEditorApp = "emacs"

@@ -18,7 +18,7 @@ delayedStartOnce greedyKill time run =
       sleep = "sleep " ++ show time
       kills = "pkill " ++ execName
       howToRun = "bash -c \"" ++ run ++ "&\""
-      ifkill = "if not pgrep " ++ execName ++ "; then " ++ howToRun ++ "; fi;"
+      ifkill = "if ! pgrep " ++ execName ++ "; then " ++ howToRun ++ "; fi;"
       ands = "; "
       wrap str = "bash -c '" ++ str ++ "'"
   in if greedyKill then
@@ -30,20 +30,13 @@ myStartup :: X ()
 myStartup = do
   ewmhDesktopsStartup
   setDefaultCursor xC_left_ptr
-  -- delayedStartOnce True 00 "taffybar"
-  delayedStartOnce True 00 "compton"
-  delayedStartOnce True 01 "~/bin/init-keyboard"
-  -- delayedStartOnce True 10 "pasystray"
-  -- delayedStartOnce True 15 "thunderbird"
-  -- delayedStartOnce False 30 "xscreensaver -no-splash"
-  delayedStartOnce True 02 "urxvtd --quiet --opendisplay --fork"
-  delayedStartOnce True 03 myTerminalApp
-  delayedStartOnce True 05 "emacs --daemon"
-  -- delayedStartOnce False 30 "watch -n 120 ~/.myscripts/batteryNotifier.sh"
-  -- spawnOnce "~/.myscripts/blueoff &"
-  spawn "feh --bg-fill /usr/share/backgrounds/wallpaper.jpg &"
+  delayedStartOnce False 00 "compton"
+  delayedStartOnce False 00 "urxvtd --quiet --opendisplay --fork"
+  delayedStartOnce True 00 "~/bin/bingwallpaper -1"
+  delayedStartOnce True 00 "~/bin/init-keyboard"
+  delayedStartOnce True 01 myTerminalApp
+  delayedStartOnce False 01 "emacs --daemon"
   spawn "xrdb ~/.Xresources &"
-  -- spawn "pcmanfm --desktop &"
 
 spawnToWorkspace :: String -> String -> X ()
 spawnToWorkspace program workspace = do

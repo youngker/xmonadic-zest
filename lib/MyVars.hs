@@ -14,7 +14,7 @@ myBrowserApp :: String
 myBrowserApp = "google-chrome --no-sandbox"
 
 myTerminalApp :: String
-myTerminalApp = "urxvtc"
+myTerminalApp = "~/bin/st"
 
 myEditorApp :: String
 myEditorApp = "emacs"

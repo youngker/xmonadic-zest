@@ -31,7 +31,6 @@ myStartup = do
   ewmhDesktopsStartup
   setDefaultCursor xC_left_ptr
   delayedStartOnce False 00 "compton"
-  delayedStartOnce False 00 "urxvtd --quiet --opendisplay --fork"
   delayedStartOnce True 00 "~/bin/bingwallpaper -1"
   delayedStartOnce True 00 "~/bin/init-keyboard"
   delayedStartOnce True 01 myTerminalApp
